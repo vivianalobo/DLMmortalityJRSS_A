@@ -14,14 +14,14 @@ source('gibbs_missing_data.R')
 y[c(3:16),2] = NA
 V = cov(y[-c(3:16),])
 V
-load("study3/outcenD_3tables.RData")
+#load("study3/outcenD_3tables.RData")
 #save.image("study3/outcenD_3tables.RData")
 
 
 ### cenario f do artigo (1-45 anos female 2010) ~ 43%
 y[c(1:45),2] = NA
 V = cov(y[-c(1:45),])
-load("study3/outcenF_3tables.RData")
+#load("study3/outcenF_3tables.RData")
 #save.image("study3/outcenF_3tables.RData")
 
 
@@ -182,31 +182,7 @@ mx..f2<- mxtot. %>%
 out..missf<- out.missAll %>%
   filter(sex=="female", age <=35)
 
-# pdf("Fig12b.pdf",  width=10, height=6) 
-# ggplot(NULL, aes(x = 1:35)) + 
-# geom_point(data = filter(mx..f, (age %in% c(3:16))), aes(x = age, y = mx), color="tomato", size=1.7, shape=1) +
-#  geom_point(data = filter(mx..f, !(age %in% c(3:16))), aes(x = age, y = mx), color="tomato") +
-# geom_point(data = mx..m, aes(x = age, y = mx), color="steelblue") +
-# geom_point(data = mx..f2, aes(x = age, y = mx), color="orange") +
-#  geom_line(data=out.missAll., aes(x=age, y = qx.fitted, color = sex)) +
-#    geom_line(data=outAll., aes(x=age, y = qx.fitted, color = sex), linetype="dashed", linewidth=0.7) +
-#  geom_ribbon(data = out..missf, aes(x = age, ymin = qx.lower, ymax = qx.upper, fill=sex), alpha = 0.25) +
-#   theme_classic(base_size = 20) + 
-#     scale_y_continuous(expression(q[x]), limits = c(0.00005, 0.0015), 
-#                        trans = 'log10', labels = scales::comma) + 
-#     scale_x_continuous("Age", breaks = seq(0, 40, by = 10)) + 
-#   guides( fill = "none") +
-#   scale_color_manual(values=c( "tomato", "orange","steelblue"), labels=c("female (2010)", "female (2012)","male (2010)"))+
-#   scale_fill_manual(values=c("tomato","orange","steelblue"), labels=c("female (2010)","female (2012)", "male (2010)")) +
-#    theme(legend.position = c(0.88,0.18), strip.background=element_rect(colour="black", fill="gray87"), 
-#         panel.border = element_rect(color = "black", fill = NA, linewidth = 1), 
-#         legend.title=element_blank(), legend.key.height = unit(.6, "cm") , 
-#         legend.text=element_text(color="black", size=16), 
-#         axis.title = element_text(color = "black", size = 14), 
-#         axis.text = element_text(color="black",size=14))+ 
-#   facet_wrap(~id1, ncol=4, labeller = labeller(id1 = c("1" = "Usual",
-#                                                        "2" = "Common term")))
-# graphics.off()
+
 
 ## ler aqui!
 outAll.f <- outAll %>%
@@ -262,34 +238,6 @@ mx..f2<- mxtot. %>%
 out..missf<- out.missAll %>%
   filter(sex=="female", age <=60)
 
-
-
-# pdf("Fig12c.pdf",  width=10, height=6)
-# ggplot(NULL, aes(x = 1:60)) + 
-#   geom_point(data = filter(mx..f, (age %in% c(1:45))), aes(x = age, y = mx), color="tomato", size=1.7, shape=1) +
-#   geom_point(data = filter(mx..f, !(age %in% c(1:45))), aes(x = age, y = mx), color="tomato") +
-#   geom_point(data = mx..m, aes(x = age, y = mx), color="steelblue") +
-#   geom_point(data = mx..f2, aes(x = age, y = mx), color="orange") +
-#   geom_line(data=out.missAll., aes(x=age, y = qx.fitted, color = sex)) +
-#   geom_line(data=outAll., aes(x=age, y = qx.fitted, color = sex), linetype="dashed", linewidth=0.7) +
-#   geom_ribbon(data = out..missf, aes(x = age, ymin = qx.lower, ymax = qx.upper, fill=sex), alpha = 0.25) +
-#   theme_classic(base_size = 20) + 
-#   scale_y_continuous(expression(q[x]), limits = c(0.00001, 0.015), 
-#                      trans = 'log10', labels = scales::comma) + 
-#   scale_x_continuous("Age", breaks = seq(0, 60, by = 10)) + 
-#   guides( fill = "none") +
-#   scale_color_manual(values=c( "tomato", "orange","steelblue"), labels=c("female (2010)", "female (2012)","male (2010)"))+
-#   scale_fill_manual(values=c("tomato","orange","steelblue"), labels=c("female (2010)","female (2012)", "male (2010)")) + 
-#     theme(legend.position = c(0.88,0.18), strip.background=element_rect(colour="black", fill="gray87"), 
-#         panel.border = element_rect(color = "black", fill = NA, linewidth = 1), 
-#         legend.title=element_blank(), legend.key.height = unit(.6, "cm") , 
-#         legend.text=element_text(color="black", size=16), 
-#         axis.title = element_text(color = "black", size = 14), 
-#         axis.text = element_text(color="black",size=14))+ 
-# facet_wrap(~id1, ncol=4, labeller = labeller(id1 = c("1" = "Usual",
-#                                                      "2" = "Common term")))
-# 
-# graphics.off()
 
 #### rodar aqui
 outAll.f <- outAll %>%
