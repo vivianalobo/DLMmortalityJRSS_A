@@ -8,9 +8,7 @@ This work presents a Bayesian dynamical model for the joint mortality graduation
 
 
 ### Prerequisites
-
-The codes use the dynamic linear mortality model approach implemented in the
-**BayesMortalityPlus** package developed by us.
+The methodology utilises the dynamic linear mortality model, as implemented in the **BayesMortalityPlus** package, which we have developed.
 
 ``` r
 require("BayesMortalityPlus")
