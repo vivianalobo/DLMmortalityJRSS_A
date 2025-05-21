@@ -1,10 +1,9 @@
-######################################################
+#################################################################################
 #### output: exploraratory analysis
 ### data: England + Wales, male and female, 2010-2012
-######################################################
+### authors: Luiz Figueiredo, Viviana Lobo, Mariane Alves and Thais Fonseca
+#################################################################################
 
-
-setwd("~/Dropbox/Semestre 2024.1 UFRJ/Projeto Multivariado (viviana)/ResultsPaper")
 
 
 library(dplyr)
