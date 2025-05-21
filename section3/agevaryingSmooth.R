@@ -1,4 +1,4 @@
-setwd("~/Dropbox/Semestre 2024.1 UFRJ/Projeto Multivariado (viviana)")
+
 
 library(dplyr)
 library(ggplot2)
